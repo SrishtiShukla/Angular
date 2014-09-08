@@ -1,13 +1,18 @@
-var TODOTasks = angular.module('MyApp',['ngRoute']);
+var MyApp = angular.module('MyApp',['ngRoute', 'authorController']);
 
-
-TODOTasks.config(['$routeProvider',function($routeProvider){
+MyApp.config(['$routeProvider',function($routeProvider){
     $routeProvider.
     when('/test',{
-        controller:'TODOListCtrl',
-        template:'<p>hello</p>'
+        template:    '<p>Test Hello</p>'
     }).
     when('/trial',{
         templateUrl: '/assets/partials/trial.html'
+    }).
+    when('/welcome',{
+        templateUrl: '/assets/partials/welcomefile.html',
+        controller: 'AuthorDetailController'
+    }).
+    otherwise({
+        redirectTo: '/test'
     });
 }]);
