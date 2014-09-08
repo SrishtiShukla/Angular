@@ -1,0 +1,24 @@
+@(title: String)(content: Html)
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>@title</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.js" type="text/javascript"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.js" type="text/javascript"></script>
+        <script src="@routes.Assets.at("javascripts/app.js")" type="text/javascript"></script>
+    </head>
+    <body ng-app="MyApp">
+    <div ng-view></div>
+    <input ng-model="test" type="input"/>
+        {{test}}
+        <!--<div ng-controller="MyAppController">
+            <h3>Welcome</h3>
+                    {{author.firstName}}
+                    {{author.lastName}}
+        </div>-->
+    </body>
+</html>

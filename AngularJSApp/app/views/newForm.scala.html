@@ -1,0 +1,18 @@
+@(taskForm: Form[Task])
+
+@import helper._
+
+@main("New Task"){
+
+<h2>Add a new Task</h2>
+
+            @form(routes.Application.newTask()){
+
+            @inputText(taskForm("id"), '_label -> "Label ID", '_help -> "")
+
+            @inputText(taskForm("label"), '_label -> "Label Name", '_help -> "")
+
+<input type="submit" value="Create">
+
+  }
+}

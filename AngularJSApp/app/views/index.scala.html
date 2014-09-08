@@ -1,0 +1,24 @@
+@(tasks: List[Task])
+
+@import helper._
+
+@main("AngularJS with Play") {
+
+<html>
+<head></head>
+<body ng-controller="TODOListCtrl">
+<h3>To Do List</h3>
+<div>
+
+    @for(task <- tasks){
+    @task.label
+    }
+    <ul>
+        <li ng-repeat="task in tasks">{{task}}</li>
+    </ul>
+
+
+</div>
+</body>
+</html>
+}
